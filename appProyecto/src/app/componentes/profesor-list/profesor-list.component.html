@@ -1,0 +1,43 @@
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <form class="d-flex" role="search">
+                <div class="form-group">
+                    <input [(ngModel)]="filterPost" name="filterPost" placeholder="Buscar" type="search"
+                        class="form-control me-2" aria-label="Search">
+                </div>
+            </form>
+            <h1> </h1>
+        </div>
+    </div>
+</div>
+<div class="col-md-4" *ngFor="let profesor of profesores | filter:filterPost">
+    <div class="card text-center">
+        <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
+            RFC: {{profesor.rfc}}
+            <button class="btn btn-danger" (click)="borrarProfesor(profesor.rfc)">
+                <i class="far fa-trash-alt"></i>
+            </button>
+        </div>
+        <div class="card-body">
+            <img [src]="profesor.foto" width="300" height="230" alt="card-img-top">
+            <p>Nombre: {{profesor.nombre}}</p>
+            <p>Apellido Paterno: {{profesor.paterno}}</p>
+            <p>Apellido Materno: {{profesor.materno}}</p>
+            <p>Edad: {{profesor.edad}}</p>
+            <p>Fecha de Contrato: {{profesor.fechaContrato}}</p>
+            <p>Sexo: {{profesor.sexo}}</p>
+            <p>Cedula: {{profesor.cedula}}</p>
+            <p>Grado: {{profesor.grado}}</p>
+            <p>Dirección: {{profesor.direccion}}</p>
+            <a [routerLink]="['/profesores/actualizar', profesor.rfc]" class="btn btn-info btn-block">
+                Editar Docente
+            </a>
+        </div>
+    </div>
+</div>
+<h1> </h1>
+<div class="container">
+    <button type="button" style="border: transparent"> <img src="assets/excel.png" height="50" width="50"
+            (click)="exportAsXLSX()" /></button>
+</div>

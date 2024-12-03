@@ -1,0 +1,40 @@
+<div class="col-md-5 offset-md-3">
+    <div class="card">
+        <div class="card-body">
+            <form>
+                <div class="card-body">
+                    <input type="number" name="clave" [(ngModel)]="asignaturas.clave" placeholder="Clave: " class="form-control" autofocus>
+                </div>
+                <div class="card-body">
+                    <input type="text" name="rfc" [(ngModel)]="asignaturas.rfc" placeholder="RFC: " class="form-control">
+                </div>
+                <div class="card-body">
+                    <input type="text" name="nombre" [(ngModel)]="asignaturas.nombre" placeholder="Nombre: " class="form-control">
+                </div>
+                <div class="card-body">
+                    <input type="number" name="cantHoras" [(ngModel)]="asignaturas.cantHoras" placeholder="Cantidad de Horas: " class="form-control">
+                </div>
+                <div class="card-body">
+                    <input type="number" name="creditos" [(ngModel)]="asignaturas.creditos" placeholder="Creditos: " class="form-control">
+                </div>
+                <div class="card-body">
+                    <input type="number"  name="precio" [(ngModel)]="asignaturas.precio" placeholder="Precio: " class="form-control">
+                </div>
+                <button type="button" class="btn btn-warning" (click)="edit ? actualizaAsignatura() : addAsignaturas()">
+                    Agregar/Actualizar
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="col-md-4">
+    <div class="card card-body text-center">
+        <h3>Clave: {{asignaturas.clave == 0 ? '-----' : asignaturas.clave}}</h3>
+        <p>RFC: {{asignaturas.rfc == '' ? '-----' : asignaturas.rfc}}</p>
+        <p>Nombre: {{asignaturas.nombre == '' ? '-----' : asignaturas.nombre}}</p>
+        <p>Cantidad de Horas: {{asignaturas.cantHoras == 0 ? '--' : asignaturas.cantHoras}}</p>
+        <p>Creditos: {{asignaturas.creditos == 0 ? '--' : asignaturas.creditos}}</p>
+        <p>Precio: {{asignaturas.precio == {} ? '--.--' : asignaturas.precio}}</p>
+        <p>Fecha Registro: {{asignaturas.fechaHoraRegistro | date:'yyyy-MM-dd HH:mm:ss'}}</p>
+    </div>
+</div>

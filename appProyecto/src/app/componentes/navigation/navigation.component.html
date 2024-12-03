@@ -1,0 +1,79 @@
+<nav class="navbar navbar-expand-lg bg-primary">
+    <div class="container-fluid">
+        <a class="navbar-brand" routerLink="/inicio">
+            <i class="fa-solid fa-school fa-beat" style="color: #3e7d36;"></i> Sistema</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="true">
+                        <i class="fa-solid fa-chalkboard-user fa-fade" style="color: #d3ce36;"></i> Docentes
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" routerLink="/profesores">
+                            <i class="fa-solid fa-clipboard-list fa-bounce" style="color: #cfb53b;"></i> Lista de Docentes</a>
+                        </li>
+                        <li><a class="dropdown-item" routerLink="/profesores/agregar">
+                            <i class="fa-solid fa-person-circle-plus fa-beat" style="color: #ffdf50;"></i> Agregar Docentes</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fa-solid fa-briefcase fa-bounce" style="color: #2c511f;"></i> Carreras
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" routerLink="/carreras">
+                            <i class="fa-solid fa-laptop-file fa-beat-fade" style="color: #299617;"></i> Ver Carrera</a></li>
+                        <li><a class="dropdown-item" routerLink="/carreras/agregar">
+                            <i class="fa-solid fa-folder-plus fa-beat" style="color: #043a14;"></i> Agregar Carrera</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fa-solid fa-users fa-beat-fade" style="color: #d39103;"></i> Alumnos
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" routerLink="/alumnos">
+                            <i class="fa-solid fa-address-card fa-fade" style="color: #d4aa50;"></i> Lista Alumnos</a>
+                        </li>
+                        <li><a class="dropdown-item" routerLink="/alumnos/agregar">
+                            <i class="fa-solid fa-user-plus fa-bounce" style="color: #d4af37;"></i> Agregar
+                                Alumnos</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle"  role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fa-solid fa-book fa-bounce" style="color: #36511f;"></i> Asignaturas
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" routerLink="/asignaturas">
+                            <i class="fa-brands fa-stack-overflow fa-shake" style="color: #36511f;"></i> Asignaturas</a></li>
+                        <li><a class="dropdown-item" routerLink="/asignaturas/agregar">
+                                <i class="fa-solid fa-plus fa-bounce" style="color: #36511f;"></i> Agregar
+                                Asignaturas</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle"  role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fa-solid fa-address-book fa-shake" style="color: #d1a400;"></i> Alumno-Asignatura
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" routerLink="/alumnosasignatura">
+                            <i class="fa-solid fa-id-badge fa-bounce" style="color: #dcaa50;"></i> Alumnos-Asignaturas </a></li>
+                        <li><a class="dropdown-item" routerLink="/alumnosasignatura/agregar">
+                            <i class="fa-solid fa-arrows-down-to-people fa-fade" style="color: #e6c800;"></i> Agregar
+                                Alumno-Asignatura</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+

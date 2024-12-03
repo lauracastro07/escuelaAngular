@@ -1,0 +1,42 @@
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <form class="d-flex" role="search">
+                <div class="form-group">
+                    <input [(ngModel)]="filterPost" name="filterPost" placeholder="Buscar" type="search"
+                        class="form-control me-2" aria-label="Search">
+                </div>
+            </form>
+            <h1> </h1>
+        </div>
+    </div>
+</div>
+<div class="col-md-4" *ngFor="let alumno of alumnos | alumno:filterPost">
+    <div class="card text-center">
+        <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
+            Cuenta: {{alumno.cuenta}}
+            <button class="btn btn-danger" (click)="alumno.cuenta !== undefined ? borrarAlumno(alumno.cuenta.toString()) : undefined">
+
+                <i class="far fa-trash-alt"></i>
+            </button>
+        </div>
+        <div class="card-body">
+            <img [src]="alumno.foto" width="300" height="230" alt="card-img-top">
+            <p>Codigo de la Carrera que cursa: {{alumno.codigo}}</p>
+            <p>Nombre: {{alumno.nombre}}</p>
+            <p>Apellido Paterno: {{alumno.paterno}}</p>
+            <p>Apellido Materno: {{alumno.materno}}</p>
+            <p>Edad: {{alumno.edad}}</p>
+            <p>Sexo: {{alumno.sexo}}</p>
+            <p>Celular: {{alumno.celular}}</p>
+            <a [routerLink]="['/alumnos/actualizar', alumno.cuenta]" class="btn btn-info btn-block">
+                Editar Alumno
+            </a>
+        </div>
+    </div>
+</div>
+<h1> </h1>
+<div class="container">
+    <button type="button" style="border: transparent"> <img src="assets/excel.png" height="50" width="50"
+            (click)="exportAsXLSX()" /></button>
+</div>

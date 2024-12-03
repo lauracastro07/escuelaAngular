@@ -1,0 +1,35 @@
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <form class="d-flex" role="search">
+                <div class="form-group">
+                    <input [(ngModel)]="filterPost" name="filterPost" placeholder="Buscar" type="search"
+                        class="form-control me-2" aria-label="Search">
+                </div>
+            </form>
+            <h1> </h1>
+        </div>
+    </div>
+</div>
+<div class="col-md-4" *ngFor="let alumasig of alumasigs | alumnoasig:filterPost">
+    <div class="card text-center">
+        <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
+           Cuenta del Alumno: {{alumasig.cuenta}}
+           
+            <button class="btn btn-danger" (click)="alumasig.cuenta !== undefined ? borrarAlumasig(alumasig.cuenta.toString()) : undefined">
+                <i class="far fa-trash-alt"></i>
+            </button>
+        </div>
+        <div class="card-body">
+            <p>Clave de la Materia: {{alumasig.clave}}</p>
+            <a [routerLink]="['/alumnosasignaturas/actualizar', alumasig.cuenta]" class="btn btn-info btn-block">
+                Editar Alumno
+            </a>
+        </div>
+    </div>
+</div>
+<h1> </h1>
+<div class="container">
+    <button type="button" style="border: transparent"> <img src="assets/excel.png" height="50" width="50"
+            (click)="exportAsXLSX()" /></button>
+</div>

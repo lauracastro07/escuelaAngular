@@ -1,0 +1,60 @@
+<div class="col-md-5 offset-md-3">
+    <div class="card">
+        <div class="card-body">
+            <form>
+                <div class="card-body">
+                    <input type="text" name="rfc" [(ngModel)]="profesor.rfc" placeholder="RFC: " class="form-control" autofocus>
+                </div>
+                <div class="card-body">
+                    <input type="text" name="nombre" [(ngModel)]="profesor.nombre" placeholder="Nombre: " class="form-control">
+                </div>
+                <div class="card-body">
+                    <input type="text" name="paterno" [(ngModel)]="profesor.paterno" placeholder="Apellido Paterno: " class="form-control">
+                </div>
+                <div class="card-body">
+                    <input type="text" name="materno" [(ngModel)]="profesor.materno" placeholder="Apellido Materno: " class="form-control">
+                </div>
+                <div class="card-body">
+                    <input type="number" name="edad" [(ngModel)]="profesor.edad" placeholder="Edad: " class="form-control">
+                </div>
+                <div class="card-body">
+                    <input type="date" name="fechaContrato" [(ngModel)]="profesor.fechaContrato" placeholder="Fecha de Contrato: " class="form-control">
+                </div>
+                <div class="card-body">
+                    <input type="text" name="sexo" [(ngModel)]="profesor.sexo" placeholder="Sexo: " class="form-control">
+                </div>
+                <div class="card-body">
+                    <input type="number" name="cedula" [(ngModel)]="profesor.cedula" placeholder="Cedula: " class="form-control">
+                </div>
+                <div class="card-body">
+                    <input type="text" name="grado" [(ngModel)]="profesor.grado" placeholder="Grado: " class="form-control">
+                </div>
+                <div class="card-body">
+                    <input type="text" name="direccion" [(ngModel)]="profesor.direccion" placeholder="Direccion: " class="form-control">
+                </div>
+                <div class="card-body">
+                    <input type="url" name="foto" [(ngModel)]="profesor.foto" placeholder="Foto: " class="form-control">
+                </div>
+                <button type="button" class="btn btn-warning" (click)="edit ? actualizaProfesor() : addProfesor()">
+                    Agregar/Actualizar
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-4">
+    <div class="card card-body text-center">
+        <img [src]="profesor.foto == '' ? '/assets/noImagen.jpg' : profesor.foto" class="card-img-top">
+        <h3>RFC: {{profesor.rfc == '' ? '-----' : profesor.rfc}}</h3>
+        <p>Nombre: {{profesor.nombre == '' ? '-----' : profesor.nombre}}</p>
+        <p>Apellido Paterno: {{profesor.paterno == '' ? '-----' : profesor.paterno}}</p>
+        <p>Apellido Materno: {{profesor.materno == '' ? '-----' : profesor.materno}}</p>
+        <p>Edad: {{profesor.edad == 0 ? '--' : profesor.edad}}</p>
+        <p>Fecha de Contrato: {{profesor.fechaContrato | date:'yyyy-MM-dd'}}</p>
+        <p>Sexo: {{profesor.sexo == '' ? 'M/F' : profesor.sexo}}</p>
+        <p>Cedula: {{profesor.cedula == 0 ? '-----' : profesor.cedula}}</p>
+        <p>Grado: {{profesor.grado == '' ? '-----' : profesor.grado}}</p>
+        <p>Direccion: {{profesor.direccion == '' ? '-----' : profesor.direccion}}</p>
+    </div>
+</div>

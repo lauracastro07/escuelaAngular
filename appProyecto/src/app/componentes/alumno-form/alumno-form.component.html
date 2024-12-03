@@ -1,0 +1,51 @@
+<div class="col-md-5 offset-md-3">
+    <div class="card">
+        <div class="card-body">
+            <form>
+                <div class="card-body">
+                    <input type="number" name="cuenta" [(ngModel)]="alumno.cuenta" placeholder="Cuenta: " class="form-control" autofocus>
+                </div>
+                <div class="card-body">
+                    <input type="number" name="codigo" [(ngModel)]="alumno.codigo" placeholder="Codigo: " class="form-control">
+                </div>
+                <div class="card-body">
+                    <input type="text" name="nombre" [(ngModel)]="alumno.nombre" placeholder="Nombre: " class="form-control">
+                </div>
+                <div class="card-body">
+                    <input type="text" name="paterno" [(ngModel)]="alumno.paterno" placeholder="Apellido Paterno: " class="form-control">
+                </div>
+                <div class="card-body">
+                    <input type="text" name="materno" [(ngModel)]="alumno.materno" placeholder="Apellido Materno: " class="form-control">
+                </div>
+                <div class="card-body">
+                    <input type="number" name="edad" [(ngModel)]="alumno.edad" placeholder="Edad: " class="form-control">
+                </div>
+                <div class="card-body">
+                    <input type="text" name="sexo" [(ngModel)]="alumno.sexo" placeholder="Sexo: " class="form-control">
+                </div>
+                <div class="card-body">
+                    <input type="tel" name="celular" [(ngModel)]="alumno.celular" placeholder="Celular: " class="form-control">
+                </div>
+                <div class="card-body">
+                    <input type="url" name="foto" [(ngModel)]="alumno.foto" placeholder="Foto: " class="form-control">
+                </div>
+                <button type="button" class="btn btn-warning" (click)="edit ? actualizaAlumno() : addAlumno()">
+                    Agregar/Actualizar
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="col-md-4">
+    <div class="card card-body text-center">
+        <img [src]="alumno.foto == '' ? '/assets/noImagen.jpg' : alumno.foto" class="card-img-top">
+        <h3>Cuenta: {{alumno.cuenta == 0 ? '-----' : alumno.cuenta}}</h3>
+        <p>Codigo de la carrera que cursa: {{alumno.codigo == 0 ? '-----' : alumno.codigo}}</p>
+        <p>Nombre: {{alumno.nombre == '' ? '-----' : alumno.nombre}}</p>
+        <p>Apellido Paterno: {{alumno.paterno == '' ? '-----' : alumno.paterno}}</p>
+        <p>Apellido Materno: {{alumno.materno == '' ? '-----' : alumno.materno}}</p>
+        <p>Edad: {{alumno.edad == 0 ? '-----' : alumno.edad}}</p>
+        <p>Sexo: {{alumno.sexo == '' ? 'M/F' : alumno.sexo}}</p>
+        <p>Celular: {{alumno.celular}}</p>
+    </div>
+</div>

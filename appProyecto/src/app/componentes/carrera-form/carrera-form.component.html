@@ -1,0 +1,23 @@
+<div class="col-md-5 offset-md-3">
+    <div class="card">
+        <div class="card-body">
+            <form>
+                <div class="card-body">
+                    <input type="number" name="codigo" [(ngModel)]="carrera.codigo" placeholder="Codigo: " class="form-control" autofocus>
+                </div>
+                <div class="card-body">
+                    <input type="text" name="nombre" [(ngModel)]="carrera.nombre" placeholder="Nombre: " class="form-control">
+                </div>
+                <button type="button" class="btn btn-warning" (click)="edit ? actualizaCarrera() : addCarrera()">
+                    Agregar/Actualizar
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="col-md-4">
+    <div class="card card-body text-center">
+        <h3>Codigo: {{carrera.codigo == 0 ? '-----' : carrera.codigo}}</h3>
+        <p>Nombre: {{carrera.nombre == '' ? '-----' : carrera.nombre}}</p>
+    </div>
+</div>

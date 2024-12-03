@@ -1,0 +1,39 @@
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <form class="d-flex" role="search">
+                <div class="form-group">
+                    <input [(ngModel)]="filterPost" name="filterPost" placeholder="Buscar" type="search"
+                        class="form-control me-2" aria-label="Search">
+                </div>
+            </form>
+            <h1> </h1>
+        </div>
+    </div>
+</div>
+<div class="col-md-4" *ngFor="let asignatura of asignaturas | asignaturas:filterPost">
+    <div class="card text-center">
+        <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
+            Clave: {{asignatura.clave}}
+            <button class="btn btn-danger" (click)="asignatura.clave !== undefined ? borrarAsignatura(asignatura.clave.toString()) : undefined">
+                <i class="far fa-trash-alt"></i>
+            </button>
+        </div>
+        <div class="card-body">
+            <p>RFC: {{asignatura.rfc}}</p>
+            <p>Nombre: {{asignatura.nombre}}</p>
+            <p>Cantidad de Horas: {{asignatura.cantHoras}}</p>
+            <p>Creditos: {{asignatura.creditos}}</p>
+            <p>Precio: {{asignatura.precio}}</p>
+            <p>Fecha de Registro: {{asignatura.fechaHoraRegistro}}</p>
+            <a [routerLink]="['/asignaturas/actualizar', asignatura.clave]" class="btn btn-info btn-block">
+                Editar Asignatura
+            </a>
+        </div>
+    </div>
+</div>
+<h1> </h1>
+<div class="container">
+    <button type="button" style="border: transparent"> <img src="assets/excel.png" height="50" width="50"
+            (click)="exportAsXLSX()" /></button>
+</div>

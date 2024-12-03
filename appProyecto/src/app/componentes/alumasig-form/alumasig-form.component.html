@@ -1,0 +1,23 @@
+<div class="col-md-5 offset-md-3">
+    <div class="card">
+        <div class="card-body">
+            <form>
+                <div class="card-body">
+                    <input type="number" name="cuenta" [(ngModel)]="alumnoasignatura.cuenta" placeholder="Cuenta: " class="form-control" autofocus> 
+                </div>
+                <div class="card-body">
+                    <input type="number" name="clave" [(ngModel)]="alumnoasignatura.clave" placeholder="Clave: " class="form-control">
+                </div>
+                <button type="button" class="btn btn-warning" (click)="edit ? actualizaAlumasig() :addAlumasig()">
+                    Agregar/Actualizar
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="col-md-4">
+    <div class="card card-body text-center">
+        <h3>Cuenta del Alumno: {{alumnoasignatura.cuenta == 0 ? '-------' : alumnoasignatura.cuenta}}</h3>
+        <p>Clave de la Materia: {{alumnoasignatura.clave == 0 ? '---' : alumnoasignatura.clave}}</p>
+    </div>
+</div>
